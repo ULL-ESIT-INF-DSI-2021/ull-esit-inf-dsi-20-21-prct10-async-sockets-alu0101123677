@@ -1,9 +1,8 @@
 import * as chalk from 'chalk'
-type Color = 'Rojo' | 'Verde' | 'Azul' | 'Amarillo'
 
 
 export class Note {
-  constructor(protected title: string, protected body: string, protected color: Color){}
+  constructor(protected title: string, protected body: string, protected color: string){}
 
   getTitle(): string{
     return this.title;
@@ -25,7 +24,7 @@ export class Note {
     this.body = body;
   }
 
-  setColor(color: Color) {
+  setColor(color: string) {
     this.color = color
   }
 
@@ -44,7 +43,8 @@ export class Note {
         console.log(chalk.yellow(this.title));
         break;
       default:
-        console.log(chalk.red("Color no valido para la nota"));
+        console.log("Color no valido, se le asigna el rojo");
+        console.log(chalk.red(this.body));
         break;
     }
   }
@@ -64,7 +64,8 @@ export class Note {
         console.log(chalk.yellow(this.body));
         break;
       default:
-        console.log(chalk.red("Color no valido para la nota"));
+        console.log("Color no valido, se le asigna el rojo");
+        console.log(chalk.red(this.body));
         break;
     }
   }

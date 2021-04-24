@@ -1,4 +1,5 @@
 import {Note} from './Note'
+import {NoteGestor} from './NoteGestor'
 import * as yargs from 'yargs';
 
 yargs.command({
@@ -27,7 +28,10 @@ yargs.command({
     },
   },
   handler(argv) {
-    console.log('añadir')
+    if (typeof argv.user === 'string' && typeof argv.title === 'string' && typeof argv.body === 'string' &&
+        typeof argv.color === 'string') {
+      let note = new Note(argv.title, argv.body, argv.color);
+    }
   },
 });
 
