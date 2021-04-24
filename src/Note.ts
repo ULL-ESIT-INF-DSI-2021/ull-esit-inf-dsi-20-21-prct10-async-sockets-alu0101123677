@@ -44,7 +44,7 @@ export class Note {
         break;
       default:
         console.log("Color no valido, se le asigna el rojo");
-        console.log(chalk.red(this.body));
+        console.log(chalk.red(this.title));
         break;
     }
   }
