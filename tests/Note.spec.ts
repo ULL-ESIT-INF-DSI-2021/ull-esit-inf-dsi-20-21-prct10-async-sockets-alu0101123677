@@ -58,7 +58,6 @@ describe('check printBody of Note class', () => {
   let note02 = new Note("Nota azul", "Esto es una nota azul", "Azul");
   let note03 = new Note("Nota verde", "Esto es una nota roja", "Verde");
   let note04 = new Note("Nota amarilla", "Esto es una nota roja", "Amarillo");
-  let note05 = new Note("Nota violeta", "Esto es una nota violeta", "violeta");
   it('Comprobación printBody para rojo', () => {
     note01.printBody();
   }); 
