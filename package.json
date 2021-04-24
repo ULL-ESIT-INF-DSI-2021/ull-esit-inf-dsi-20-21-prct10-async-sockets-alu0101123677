@@ -1,8 +1,8 @@
 {
-  "name": "github-actions-sonar-cloud",
+  "name": "prct08-filessytem-notes-app",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/basicFunctions.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "mocha",
     "coverage": "nyc npm test && nyc report --reporter=lcov",
