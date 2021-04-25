@@ -67,11 +67,21 @@ Para introducir los colores deben ser: Rojo, Verde, Azul o Amarillo. Para ejecut
 
 ##### 3.2.2 Note
 
-Clase **Note** que realiza la representación de un objeto nota, cuenta con tres atributos title, body y color que representan respectivamente el titulo, el cuerpo y el color que tendría una nota. Cuenta con 8 atributos, 3 son getters para los atributos de la clase y 3 son setters para los atributos también.
+Clase **Note** que realiza la representación de un objeto nota, cuenta con tres atributos title, body y color que representan respectivamente el titulo, el cuerpo y el color que tendría una nota. Cuenta con 8 atributos, 3 son getters para los atributos de la clase y 3 son setters para los atributos también, además de un método printTitle y printBody, estos dos últimos métodos revisan de que color es el objeto nota e imprimen con el **chalk** su color correspondiente el titulo y el cuerpo respectivamente mediante un switch.
 
 ##### 3.2.3 NoteGestore
 
-Clase **NoteGestore** que realiza las funcionalidades
+Clase **NoteGestore** que realiza las funcionalidades añadir una nota, eliminar una nota, modificar una nota, leer una nota y listar las notas que tiene un usuario. Para realizar estas funcionalidades se cuenta con los métodos addNote, modifyNote, listNote, readNote y removeNote.
+
+AddNote recibe como parametros un string que representa el usuario y un objeto de la clase Note para así crear un fichero **JSON** que guarde la nota del usuario. Usando la función **existSync** de **node.js** comprobamos si el directorio del usuario existe, si no existe creamos el directorio y el archivo, si existiera revisamos si existe el archivo, en el caso de existir mostramos un mensaje de error y si no existe lo creamos. Para crear el archivo con el contenido de la nota utilizamos la funcion **writeFileSync** de **node.js**, es importante que el data que se le pase se consiga en un formato adecuado, esto lo realizamos gracias al **JSON.stringify**.
+
+modifyNote recibe como parametros un string que representa el usuario y un objeto de la clase para así modificar un archivo **JSON** de un usuario. Usando la función **existSync** de **node.js** comprobamos si el directorio del usuario existe, si no existe mostramos un mensaje de error, si existiera revisamos si existe el archivo, en el caso de no existir mostramos un mensaje de error y si existe lo eliminamos y creamos un nuevo archivo a partir del objeto note recibido por parametro.
+
+listNode recibe un parametro string que representa el usuario. Usando la función **existSync** de **node.js** comprobamos si el directorio del usuario existe, si no existe mostramos un mensaje de error, si existiera mostramos un listado de las notas que tiene el usuario. Para mostrar las notas utilizamos la función **readFileSync** de **node.js** para tener un vector con los nombres de todos los archivos JSON que hay en el directorio del usuario, realizamos un forEach para cada elemento del vector y así utilizar la función **readFileSync** para conseguir los datos de cada archivo y crear un objeto de la clase Note con los datos extraidos del fichero para utilizar el método **printTitle**.
+
+readNote recibe dos parametros tipo string, para así conseguir el usuario y el titulo. Usando la función **existSync** de **node.js** comprobamos si el directorio del usuario existe, si no existe mostramos un mensaje de error, si existiera comprobamos si exite el archivo, si no existe mostramos un mensaje de error y en caso de existir utilizamos la estrategia del método listNode pero para solo un archivo y usando los métodos **printTitle** y **printBody**.
+
+removeNote recibe dos parametros tipo string para así conseguir el usuario y el titulo. Usando la función **existSync** de **node.js** comprobamos si el directorio del usuario existe, si no existe mostramos un mensaje de error, si existiera comprobamos si exite el archivo, si no existe mostramos un mensaje de error y en caso de existir utilizamos la función **rmSync** de **node.js**
 
 ### 4. Conclusiones
 
