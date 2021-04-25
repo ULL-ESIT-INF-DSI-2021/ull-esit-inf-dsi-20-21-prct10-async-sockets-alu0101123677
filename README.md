@@ -1,4 +1,4 @@
-# Repositorio de la Práctica 8 de la asignatura de Desarrollo de Sistemas Infórmaticas
+# Informe de la Práctica 8 de la asignatura de Desarrollo de Sistemas Infórmaticas
 ## Datos
   * **Nombre:** Bruno Lorenzo
   * **Apellidos:** Arroyo Pedraza
