@@ -21,7 +21,7 @@ Informe de la octava práctica de la asignatura de **Desarrollo de Sistemas Info
 
 Una nota estará formada, como mínimo, por un **título**, un **cuerpo** y un **color** (rojo, verde, azul o amarillo).
 
-**Importante:**  Utilizar el comando `npm install` para instalar las dependencias de desarrollo que utiliza el proyecto cuando se descargue de GitHub.
+**Importante:**  Utilizar el comando `npm install` para instalar las dependencias de desarrollo que utiliza el proyecto cuando se descargue de GitHub. Asimismo los test unitarios si se ejecutan con `npm run test` o `npm run coverage` se ejecutan y pasan completamente pero hay ocasiones que con la integración de github action cuando se ejecutan al realizar el push es posible que alguna de las versiones de node de fallo mientras que otra versión las ejecute correctamente. 
 
 ### 2. Objetivos
 
