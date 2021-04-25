@@ -37,13 +37,15 @@ describe('check listNote function de la clase NoteGestor', () => {
 
 describe('check modifyNote function de la clase NoteGestor', () => {
   let noteGestor = new NoteGestor();
-  let note = new Note("Titulo", "Esto es una nota modificada", "Verde");
-  let note2 = new Note("Titulo3", "Esto es una nota modificada", "Verde");
+  let note = new Note("Titulo", "Esto es una nota", "Verde");
+  let note2 = new Note("Titulo", "Esto es una nota modificada", "Verde");
+  let note3 = new Note("Titulo3", "Esto es una nota modificada", "Verde");
   it('Comprobación de modifyNote si el directorio y el archivo existe', () => {
-    noteGestor.modifyNote("Bruno", note)
+    noteGestor.addNote("Bruno", note)
+    noteGestor.modifyNote("Bruno", note2)
   });
   it('Comprobación de modifyNote si el directorio existe y el archivo no existe', () => {
-    noteGestor.modifyNote("Bruno", note2)
+    noteGestor.modifyNote("Bruno", note3)
   });
   it('Comprobación de modifyNote si el directorio no existe', () => {
     noteGestor.modifyNote("Segredo", note)
