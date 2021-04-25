@@ -4,7 +4,7 @@ import {Note} from '../src/Note'
 
 describe('check Note class', () => {
   let note = new Note("Nota roja", "Esto es una nota roja", "Rojo");
-  it('Comprobación de si note01 es de la clase Plantel', () => {
+  it('Comprobación de si note es de la clase Note', () => {
     expect(note).to.be.an.instanceOf(Note);
   });
 });

@@ -50,7 +50,7 @@ export class NoteGestor {
       });
     }
     else
-      console.log(chalk.red("El directorio no existe"));
+      console.log(chalk.red("ERROR: El directorio no existe"));
   }
   
   /**
@@ -69,10 +69,10 @@ export class NoteGestor {
         console.log(chalk.green("El fichero se ha modificado"));
       }
       else
-        console.log(chalk.red("El fichero no existe"));
+        console.log(chalk.red("ERROR: El fichero no existe"));
     }
     else
-      console.log(chalk.red("El directorio no existe"));
+      console.log(chalk.red("ERROR: El directorio no existe"));
   }
   
   /**
@@ -91,10 +91,10 @@ export class NoteGestor {
         note.printBody();
       }
       else
-        console.log(chalk.red("El archivo no existe"));
+        console.log(chalk.red("ERROR: El archivo no existe"));
     }
     else
-      console.log(chalk.red("El directorio no existe"));
+      console.log(chalk.red("ERROR: El directorio no existe"));
   }
   
   /**
@@ -110,9 +110,9 @@ export class NoteGestor {
         console.log(chalk.green("El fichero ha sido borrado"));
       }
       else
-        console.log(chalk.red("El fichero no existe"));
+        console.log(chalk.red("ERROR: El fichero no existe"));
     }
     else
-      console.log(chalk.red("El directorio no existe"));
+      console.log(chalk.red("ERROR: El directorio no existe"));
   }
 }
