@@ -39,7 +39,7 @@ Por otro lado la lectura y aprendizaje de los paquetes **Yargs** y **Chalk** as�
 
 En este ejercicio creamos la clase **Note** y **NoteGestor** y el main de nuestro programa **note-app** implementado con **yargs** para utilizar la línea de comandos.
 
-##### 3.2.1 note-app
+##### 3.2.1 [note-app](./src/note-app.ts)
 
 Main del programa implementado con el paquete **yargs** para utilizar diversos comandos por terminal, los comandos utilizados son **add**, **modify**, **list**, **read** y **remove**.
 
@@ -65,11 +65,11 @@ Para introducir los colores deben ser: Rojo, Verde, Azul o Amarillo. Para ejecut
 
   * node dist/note-app.js remove --user="nombre del usuario" --title="titulo de la nota"
 
-##### 3.2.2 Note
+##### [3.2.2 Note](./src/Note.ts)
 
 Clase **Note** que realiza la representación de un objeto nota, cuenta con tres atributos title, body y color que representan respectivamente el titulo, el cuerpo y el color que tendría una nota. Cuenta con 8 atributos, 3 son getters para los atributos de la clase y 3 son setters para los atributos también, además de un método printTitle y printBody, estos dos últimos métodos revisan de que color es el objeto nota e imprimen con el **chalk** su color correspondiente el titulo y el cuerpo respectivamente mediante un switch.
 
-##### 3.2.3 NoteGestore
+##### [3.2.3 NoteGestore](./src/NoteGestor.ts)
 
 Clase **NoteGestore** que realiza las funcionalidades añadir una nota, eliminar una nota, modificar una nota, leer una nota y listar las notas que tiene un usuario. Para realizar estas funcionalidades se cuenta con los métodos addNote, modifyNote, listNote, readNote y removeNote.
 
@@ -84,6 +84,10 @@ readNote recibe dos parametros tipo string, para así conseguir el usuario y el 
 removeNote recibe dos parametros tipo string para así conseguir el usuario y el titulo. Usando la función **existSync** de **node.js** comprobamos si el directorio del usuario existe, si no existe mostramos un mensaje de error, si existiera comprobamos si exite el archivo, si no existe mostramos un mensaje de error y en caso de existir utilizamos la función **rmSync** de **node.js**
 
 ### 4. Conclusiones
+
+En conclusión la utilización del paquete **yarg** nos permite aprovechar la línea de comando y el paquete **chalk** aprovechar configuraciones distintas para mostrar de forma más cómoda información de distinta indole, esto en combinación con **node.js** nos permite crear programas mucho más dinámicos y que modelen aplicaciones que se usarían en el día a día.
+
+Así mismo la implementación de **Sonar Cloud** nos permite comprobar la calidad de nuestro código de manera mucho más cómoda.
 
 ### 5. Bibliografía
 
