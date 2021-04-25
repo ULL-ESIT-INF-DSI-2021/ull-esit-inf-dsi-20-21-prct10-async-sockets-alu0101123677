@@ -101,7 +101,7 @@
 				</a>
 				<p>En este ejercicio creamos la clase <strong>Note</strong> y <strong>NoteGestor</strong> y el main de nuestro programa <strong>note-app</strong> implementado con <strong>yargs</strong> para utilizar la línea de comandos.</p>
 				<a href="#321-note-app" id="321-note-app" style="color: inherit; text-decoration: none;">
-					<h5>3.2.1 note-app</h5>
+					<h5>3.2.1 <a href="./src/note-app.ts">note-app</a></h5>
 				</a>
 				<p>Main del programa implementado con el paquete <strong>yargs</strong> para utilizar diversos comandos por terminal, los comandos utilizados son <strong>add</strong>, <strong>modify</strong>, <strong>list</strong>, <strong>read</strong> y <strong>remove</strong>.</p>
 				<p>Comando <strong>add</strong>, se construye pasando por línea de cómando el usuario, el titulo de la nota, el cuerpo de la nota y el color de la nota. En el handler creamos un objeto de la clase Note y otro de la clase NoteGestor para así llamar al método addNote y añadir una nota en formato json al directorio del usuario.</p>
@@ -123,16 +123,23 @@
 					</li>
 				</ul>
 				<a href="#322-note" id="322-note" style="color: inherit; text-decoration: none;">
-					<h5>3.2.2 Note</h5>
+					<h5><a href="./src/Note.ts">3.2.2 Note</a></h5>
 				</a>
-				<p>Clase <strong>Note</strong> que realiza la representación de un objeto nota, cuenta con tres atributos title, body y color que representan respectivamente el titulo, el cuerpo y el color que tendría una nota. Cuenta con 8 atributos, 3 son getters para los atributos de la clase y 3 son setters para los atributos también.</p>
+				<p>Clase <strong>Note</strong> que realiza la representación de un objeto nota, cuenta con tres atributos title, body y color que representan respectivamente el titulo, el cuerpo y el color que tendría una nota. Cuenta con 8 atributos, 3 son getters para los atributos de la clase y 3 son setters para los atributos también, además de un método printTitle y printBody, estos dos últimos métodos revisan de que color es el objeto nota e imprimen con el <strong>chalk</strong> su color correspondiente el titulo y el cuerpo respectivamente mediante un switch.</p>
 				<a href="#323-notegestore" id="323-notegestore" style="color: inherit; text-decoration: none;">
-					<h5>3.2.3 NoteGestore</h5>
+					<h5><a href="./src/NoteGestor.ts">3.2.3 NoteGestore</a></h5>
 				</a>
-				<p>Clase <strong>NoteGestore</strong> que realiza las funcionalidades</p>
+				<p>Clase <strong>NoteGestore</strong> que realiza las funcionalidades añadir una nota, eliminar una nota, modificar una nota, leer una nota y listar las notas que tiene un usuario. Para realizar estas funcionalidades se cuenta con los métodos addNote, modifyNote, listNote, readNote y removeNote.</p>
+				<p>AddNote recibe como parametros un string que representa el usuario y un objeto de la clase Note para así crear un fichero <strong>JSON</strong> que guarde la nota del usuario. Usando la función <strong>existSync</strong> de <strong>node.js</strong> comprobamos si el directorio del usuario existe, si no existe creamos el directorio y el archivo, si existiera revisamos si existe el archivo, en el caso de existir mostramos un mensaje de error y si no existe lo creamos. Para crear el archivo con el contenido de la nota utilizamos la funcion <strong>writeFileSync</strong> de <strong>node.js</strong>, es importante que el data que se le pase se consiga en un formato adecuado, esto lo realizamos gracias al <strong>JSON.stringify</strong>.</p>
+				<p>modifyNote recibe como parametros un string que representa el usuario y un objeto de la clase para así modificar un archivo <strong>JSON</strong> de un usuario. Usando la función <strong>existSync</strong> de <strong>node.js</strong> comprobamos si el directorio del usuario existe, si no existe mostramos un mensaje de error, si existiera revisamos si existe el archivo, en el caso de no existir mostramos un mensaje de error y si existe lo eliminamos y creamos un nuevo archivo a partir del objeto note recibido por parametro.</p>
+				<p>listNode recibe un parametro string que representa el usuario. Usando la función <strong>existSync</strong> de <strong>node.js</strong> comprobamos si el directorio del usuario existe, si no existe mostramos un mensaje de error, si existiera mostramos un listado de las notas que tiene el usuario. Para mostrar las notas utilizamos la función <strong>readFileSync</strong> de <strong>node.js</strong> para tener un vector con los nombres de todos los archivos JSON que hay en el directorio del usuario, realizamos un forEach para cada elemento del vector y así utilizar la función <strong>readFileSync</strong> para conseguir los datos de cada archivo y crear un objeto de la clase Note con los datos extraidos del fichero para utilizar el método <strong>printTitle</strong>.</p>
+				<p>readNote recibe dos parametros tipo string, para así conseguir el usuario y el titulo. Usando la función <strong>existSync</strong> de <strong>node.js</strong> comprobamos si el directorio del usuario existe, si no existe mostramos un mensaje de error, si existiera comprobamos si exite el archivo, si no existe mostramos un mensaje de error y en caso de existir utilizamos la estrategia del método listNode pero para solo un archivo y usando los métodos <strong>printTitle</strong> y <strong>printBody</strong>.</p>
+				<p>removeNote recibe dos parametros tipo string para así conseguir el usuario y el titulo. Usando la función <strong>existSync</strong> de <strong>node.js</strong> comprobamos si el directorio del usuario existe, si no existe mostramos un mensaje de error, si existiera comprobamos si exite el archivo, si no existe mostramos un mensaje de error y en caso de existir utilizamos la función <strong>rmSync</strong> de <strong>node.js</strong></p>
 				<a href="#4-conclusiones" id="4-conclusiones" style="color: inherit; text-decoration: none;">
 					<h3>4. Conclusiones</h3>
 				</a>
+				<p>En conclusión la utilización del paquete <strong>yarg</strong> nos permite aprovechar la línea de comando y el paquete <strong>chalk</strong> aprovechar configuraciones distintas para mostrar de forma más cómoda información de distinta indole, esto en combinación con <strong>node.js</strong> nos permite crear programas mucho más dinámicos y que modelen aplicaciones que se usarían en el día a día.</p>
+				<p>Así mismo la implementación de <strong>Sonar Cloud</strong> nos permite comprobar la calidad de nuestro código de manera mucho más cómoda.</p>
 				<a href="#5-bibliografía" id="5-bibliografía" style="color: inherit; text-decoration: none;">
 					<h3>5. Bibliografía</h3>
 				</a>
