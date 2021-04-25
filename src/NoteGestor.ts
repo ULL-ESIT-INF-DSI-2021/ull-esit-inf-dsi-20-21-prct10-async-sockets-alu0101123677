@@ -3,6 +3,9 @@ import * as fs from 'fs';
 import * as chalk from 'chalk'
 import { error } from 'node:console';
 
+/**
+ * Clase NoteGestor utilizada para realizar el gestionamiento de las notas de un usuario
+ */
 export class NoteGestor {
   constructor(){}
 

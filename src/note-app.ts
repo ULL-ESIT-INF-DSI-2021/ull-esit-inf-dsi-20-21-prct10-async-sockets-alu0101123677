@@ -2,6 +2,10 @@ import {Note} from './Note'
 import {NoteGestor} from './NoteGestor'
 import * as yargs from 'yargs';
 
+/**
+ * Comando para añadir una nota por terminal.
+ * Se pasan por parametro en terminal, el usuario, el titulo, el cuerpo y color.
+ */
 yargs.command({
   command: 'add',
   describe: 'Añade una nueva nota',
@@ -37,6 +41,10 @@ yargs.command({
   },
 });
 
+/**
+ * Comando para modificar una nota por terminal.
+ * Se pasan por parametro en terminal, el usuario, el titulo, el cuerpo y color.
+ */
 yargs.command({
   command: 'modify',
   describe: 'Modifica una nueva nota',
@@ -72,6 +80,10 @@ yargs.command({
   },
 });
 
+/**
+ * Comando para listar las notas de un usuario por terminal.
+ * Se pasan por parametro en terminal, el usuario.
+ */
 yargs.command({
   command: 'list',
   describe: 'List las notas de un usuario',
@@ -90,7 +102,10 @@ yargs.command({
   },
 });
 
-
+/**
+ * Comando para leer una nota de un usuario por terminal.
+ * Se pasan por parametro en terminal, el usuario y el titulo.
+ */
 yargs.command({
   command: 'read',
   describe: 'Lee la nota de un usuario',
@@ -114,6 +129,10 @@ yargs.command({
   },
 });
 
+/**
+ * Comando para eliminar una nota de un usuario por terminal
+ * se pasan por parametro en terminal el usuario y el titulo
+ */
 yargs.command({
   command: 'remove',
   describe: 'Eliminar la nota de un usuario',
