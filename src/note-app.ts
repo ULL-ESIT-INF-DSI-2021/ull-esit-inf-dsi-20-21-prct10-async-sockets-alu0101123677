@@ -86,7 +86,7 @@ yargs.command({
  */
 yargs.command({
   command: 'list',
-  describe: 'List las notas de un usuario',
+  describe: 'Lista las notas de un usuario',
   builder: {
     user: {
       describe: 'Usuario de la notas',

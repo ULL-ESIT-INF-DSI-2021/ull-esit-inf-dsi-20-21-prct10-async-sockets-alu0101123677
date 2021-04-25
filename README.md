@@ -35,6 +35,44 @@ Para el desarrollo de la práctica cómo tal primero hay que hacer unas preparac
 
 Por otro lado la lectura y aprendizaje de los paquetes **Yargs** y **Chalk** así cómo de la **API síncrona**.
 
+#### 3.2 Desarrollo
+
+En este ejercicio creamos la clase **Note** y **NoteGestor** y el main de nuestro programa **note-app** implementado con **yargs** para utilizar la línea de comandos.
+
+##### 3.2.1 note-app
+
+Main del programa implementado con el paquete **yargs** para utilizar diversos comandos por terminal, los comandos utilizados son **add**, **modify**, **list**, **read** y **remove**.
+
+Comando **add**, se construye pasando por línea de cómando el usuario, el titulo de la nota, el cuerpo de la nota y el color de la nota. En el handler creamos un objeto de la clase Note y otro de la clase NoteGestor para así llamar al método addNote y añadir una nota en formato json al directorio del usuario.
+
+Comando **modify**, se construye pasando por línea de cómando el usuario, el título de la nota, el cuerpo de la nota y el color de la nota. En el handler creamos un objeto de la clase Note y otro de la clase NoteGestor para así llamar al método modifyNote de la clase NoteGestor y modificar una nota ya creada.
+
+Comando **list**, se construye pasando por línea de cómando el usuario. En el handler creamos un objeto de la clase NoteGestor para llamar así al método listNote y mostrar todas las notas que tiene un usuario.
+
+Comando **read**, se construye pasando por línea de cómando el usuario y el titulo de una nota. En el handler creamos un objeto de la clase NoteGestor para así llamar al método readNote y mostrar el contenido que tiene una nota.
+
+Comando **remove**, se construye pasando por línea de cómando el usuario y el titulo de una nota. En el handler creamos un objeto de la clase NoteGestor para así llamar al método removeNote y eliminar la nota de un usuario.
+
+Para introducir los colores deben ser: Rojo, Verde, Azul o Amarillo. Para ejecutar el programa se tienen las siguientes opciones:
+
+  * node dist/note-app.js add --user="nombre del usuario" --title="titulo de la nota" --body="cuerpo de la nota" --color="Color"
+
+  * node dist/note-app.js modify --user="nombre del usuario" --title="titulo de la nota" --body="cuerpo de la nota" --color="Color"
+
+  * node dist/note-app.js list --user="nombre del usuario"
+
+  * node dist/note-app.js read --user="nombre del usurio" --title="titulo de la nota"
+
+  * node dist/note-app.js remove --user="nombre del usuario" --title="titulo de la nota"
+
+##### 3.2.2 Note
+
+Clase **Note** que realiza la representación de un objeto nota, cuenta con tres atributos title, body y color que representan respectivamente el titulo, el cuerpo y el color que tendría una nota. Cuenta con 8 atributos, 3 son getters para los atributos de la clase y 3 son setters para los atributos también.
+
+##### 3.2.3 NoteGestore
+
+Clase **NoteGestore** que realiza las funcionalidades
+
 ### 4. Conclusiones
 
 ### 5. Bibliografía
