@@ -31,6 +31,8 @@ yargs.command({
     if (typeof argv.user === 'string' && typeof argv.title === 'string' && typeof argv.body === 'string' &&
         typeof argv.color === 'string') {
       let note = new Note(argv.title, argv.body, argv.color);
+      let noteGestor = new NoteGestor();
+      noteGestor.addNote(argv.user, note);
     }
   },
 });
@@ -61,7 +63,12 @@ yargs.command({
     },
   },
   handler(argv) {
-    console.log('añadir')
+    if (typeof argv.user === 'string' && typeof argv.title === 'string' && typeof argv.body === 'string' &&
+    typeof argv.color === 'string') {
+    let note = new Note(argv.title, argv.body, argv.color);
+    let noteGestor = new NoteGestor();
+    noteGestor.modifyNote(argv.user, note);
+    }
   },
 });
 
@@ -76,7 +83,10 @@ yargs.command({
     },
   },
   handler(argv) {
-    console.log('listado')
+    if (typeof argv.user === 'string') {
+    let noteGestor = new NoteGestor();
+    noteGestor.listNote(argv.user);
+    }
   },
 });
 
@@ -97,7 +107,10 @@ yargs.command({
     },
   },
   handler(argv) {
-    console.log('leer')
+    if (typeof argv.user === 'string' && typeof argv.title === 'string') {
+    let noteGestor = new NoteGestor();
+    noteGestor.readNote(argv.user, argv.title);
+    }
   },
 });
 
@@ -117,7 +130,10 @@ yargs.command({
     },
   },
   handler(argv) {
-    console.log('remover')
+    if (typeof argv.user === 'string' && typeof argv.title === 'string') {
+      let noteGestor = new NoteGestor();
+      noteGestor.removeNote(argv.user, argv.title);
+    }
   },
 });
 
