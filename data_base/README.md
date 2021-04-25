@@ -1,0 +1,1 @@
+Carpeta utilizada para guardar los usuarios y sus notas
