@@ -61,14 +61,63 @@ En el fichero **client** tenemos nuestro cliente, en el inicializamos un **socke
 
 Inicializamos una solicitud llamada request que será de tipo **RequestType** y a través de los yargs implementados le daremos forma a la solicitud gracias a los parametros que hemos introducido por teclado al iniciar el cliente. 
 
+Utilizamos **socket.write()** para enviar nuestra solicitud al servidor, si no ha sido capaz de enviar la solicitud mostrará por consola un mensaje de error, al contrario, si se ha realizado con exito mostrará un mensaje de confirmación.
+
+```typescript
+socket.write(JSON.stringify(request), (err) => {
+  if(err)
+    console.log(chalk.red(`La solicitud no se ha podido realizar: ${err.message}`));
+  else {
+    console.log(chalk.green(`La solicitud se ha podido realizar`));
+    socket.end();
+  }
+});
+```
+**client.on('message')** recoge el mensaje de respuesta que recibimos desde el servidor y que emitimos gracias a que el objeto client es un objeto de la clase ClassEventEmitter. Una vez que tenemos el mensaje mostramos por consola el apartado message de la respuesta recibida.
+
+```typescript
+client.on('message', (message) => {
+  console.log(message.message);
+});
+```
+En caso de que la conexión no se pudiera establecer tenemos el **client.on('error')** que nos comunica por consola este suceso.
+
+```typescript
+client.on('error', (err) => {
+  console.log(chalk.red(`La conexión no se ha podido establecer: ${err.message}`));
+});
+```
+
 Se puede inicializar el cliente de las siguientes maneras, teniendo en cuenta que los colores validos son Rojo, Verde, Azul y Amarillo.
 
+```bash
+$node dist/client.js add --user="usuario" --title="titulo" --body="cuerpo de la nota" --color="color de la nota"
+
+$node dist/client.js modify --user="usuario" --title="titulo" --body="cuerpo de la nota" --color="color de la nota"
+
+$node dist/client.js remove --user="usuario" --title="titulo" 
+
+$node dist/client.js read --user="usuario" --title="titulo"
+
+$node dist/client.js list --user="usuario"
+```
+
 ##### 3.2.6 [Server](./src/server.ts)
+
+En el fichero **server** tenemos nuestro servidor, para crear nuestro servidor utilizamos el  módulo net y es muy importante inicializarlo con la opción {allowHalfOpen: true}. Una vez creado nuestro servidor este estará pendiente del puerto 60300, puerto elegido en donde se conectarán nuestros clientes.
+
+Cada vez que un cliente se conecte se ejecutará el callback del servidor, este callback tiene como parametro un objeto Socket con el cual podremos recibir y enviar datos a los clientes conectados. En el momento que un cliente se conecte se nos notificará por consola y acto seguido creamos el objeto socket, un objeto de la clase **ClassEventEmitter** que recibe como parametro el socket del servidor, connection.
+
+En el momento en el que nuestro servidor reciba un mensaje del cliente, el callback de **socket.on('message')**, mostrará por pantalla que la solicitud ha sido recibida e inicilizará una respuesta de tipo **ResponseType**, este será el mensaje que enviaremos de vuelta al cliente con la respuesta, a continuación mediante un switch aplicamos el caso correspondiente al tipo de solicitud que ha enviado el cliente comprobando el message.type, en cada caso ejecutamos el método correspondiente de la clase NoteGestor y el return lo guardamos en el apartado message de nuestra respuesta.
+
+Cuando se realize el switch ya tendremos en nuestra respuesta el resultado de la operación, el cuál mediante **connection.write()** será enviado a nuestro cliente.
+
+En caso de que un cliente se desconecte o la conexión no se pueda realizar contamos con un **connection.on('error')** y un **connection.on('close')**
 
 
 ### 4. Conclusiones
 
-
+En conclusión, la introducción de los **sockets** a nuestro programa nos introduce aún más en el día a día y en casos de la vida real al utilizar un cliente-servidor, esto aplicado también a lo que hemos realizado con anterioridad aporta mucha más profundidad a la de trabajar con typescript. 
 
 ### 5. Bibliografía
 

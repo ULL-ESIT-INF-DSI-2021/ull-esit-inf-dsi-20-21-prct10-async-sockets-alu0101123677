@@ -17,9 +17,7 @@ export type RequestType = {
 /**
  * Tipo que representa una respuesta del servidor.
  * @param type que representa los tipos de solicitud.
- * @param message que representa el contenido de la respuesta.
  */
 export type ResponseType = {
-  type: 'add' | 'modify' | 'remove' | 'read' | 'list';
   message: string;
 }

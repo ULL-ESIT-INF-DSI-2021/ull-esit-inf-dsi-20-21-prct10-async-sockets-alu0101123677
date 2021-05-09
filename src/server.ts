@@ -21,7 +21,6 @@ const server = net.createServer({allowHalfOpen: true}, (connection) => {
     console.log(chalk.green('La solicitud del cliente ha sido recibida'));
 
     let response: ResponseType = {
-      type: 'add',
       message: '',
     }
 
