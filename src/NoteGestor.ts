@@ -40,19 +40,21 @@ export class NoteGestor {
    * Función listNote que muestra por terminal los titulos de las notas de un usuario
    * @param user que guarda el usuario
    */
-  listNote(user: string) {
+  listNote(user: string): string {
     let path: string = 'data_base/' + user;
+    let result: string = '';
     if (fs.existsSync(path)) {
       let archivos = fs.readdirSync(path);
       archivos.forEach(archivo => {
         let archivoRaw = fs.readFileSync(path + "/" + archivo, "utf-8");
         let archivoRawNew = JSON.parse(archivoRaw);
         let note = new Note(archivoRawNew["title"], archivoRawNew["body"], archivoRawNew["color"]);
-        note.printTitle();
+        result = result + note.printTitle() + "\n";
       });
     }
     else
-      console.log(chalk.red("ERROR: El directorio no existe"));
+      result = chalk.red("ERROR: El directorio no existe");
+    return result;
   }
   
   /**
@@ -84,21 +86,23 @@ export class NoteGestor {
    * @param user que guarda el usuario
    * @param title que guarda el titulo de la nota
    */
-  readNote(user: string, title: string) {
+  readNote(user: string, title: string): string {
     let path: string = 'data_base/' + user;
+    let result: string = ''
     if (fs.existsSync(path)) {
       if (fs.existsSync(path + "/" + title + ".json")) {
         let archivoRaw = fs.readFileSync(path + "/" + title + ".json", "utf-8");
         let archivoRawNew = JSON.parse(archivoRaw);
         let note = new Note(archivoRawNew["title"], archivoRawNew["body"], archivoRawNew["color"]);
-        note.printTitle();
-        note.printBody();
+        result = note.printTitle();
+        result = result + '\n' + note.printBody();
       }
       else
-        console.log(chalk.red("ERROR: El archivo no existe"));
+        result = chalk.red("ERROR: El archivo no existe");
     }
     else
-      console.log(chalk.red("ERROR: El directorio no existe"));
+      result = chalk.red("ERROR: El directorio no existe");
+    return result;
   }
   
   /**
@@ -119,7 +123,7 @@ export class NoteGestor {
     }
     else
       result = chalk.red("ERROR: El directorio no existe");
-      
+
     return result;
   }
 }

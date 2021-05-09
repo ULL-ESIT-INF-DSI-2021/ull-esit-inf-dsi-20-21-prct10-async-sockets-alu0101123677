@@ -205,8 +205,10 @@ client.on('message', (message) => {
       console.log(message.message);
       break;
     case 'read':
+      console.log(message.message);
       break;
     case 'list':
+      console.log(message.message);
       break;
   }
 });

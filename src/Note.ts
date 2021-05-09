@@ -62,49 +62,53 @@ export class Note {
   /**
    * Método printTitle que imprime el titulo según el color de la nota
    */
-  printTitle(){
+  printTitle(): string{
+    let result = '';
     switch (this.color) {
       case "Rojo":
-        console.log(chalk.red(this.title));
+        result = chalk.red(this.title);
         break;
       case "Verde":
-        console.log(chalk.green(this.title));
+        result = chalk.green(this.title);
         break;
       case "Azul":
-        console.log(chalk.blue(this.title));
+        result = chalk.blue(this.title);
         break;
       case "Amarillo":
-        console.log(chalk.yellow(this.title));
+        result = chalk.yellow(this.title);
         break;
       default:
-        console.log("Color no valido, se le asigna el rojo");
-        console.log(chalk.red(this.title));
+        result = "Color no valido, se le asigna el rojo, ";
+        result = result + chalk.red(this.title);
         break;
     }
+    return result;
   }
   
   /**
    * Método printBody que imprime el cuerpo según el color de la nota
    */
-  printBody(){
+  printBody(): string{
+    let result: string = ''
     switch (this.color) {
       case "Rojo":
-        console.log(chalk.red(this.body));
+        result = chalk.red(this.body);
         break;
       case "Verde":
-        console.log(chalk.green(this.body));
+        result = chalk.green(this.body);
         break;
       case "Azul":
-        console.log(chalk.blue(this.body));
+        result = chalk.blue(this.body);
         break;
       case "Amarillo":
-        console.log(chalk.yellow(this.body));
+        result = chalk.yellow(this.body);
         break;
       default:
-        console.log("Color no valido, se le asigna el rojo");
-        console.log(chalk.red(this.body));
+        result = "Color no valido, se le asigna el rojo, ";
+        result = result + chalk.red(this.body);
         break;
     }
+    return result;
   }
 }
 
