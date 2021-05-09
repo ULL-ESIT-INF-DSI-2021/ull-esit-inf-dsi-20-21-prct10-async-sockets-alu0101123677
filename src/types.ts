@@ -8,6 +8,5 @@ export type RequestType = {
 
 export type ResponseType = {
   type: 'add' | 'modify' | 'remove' | 'read' | 'list';
-  success: boolean;
   message: string;
 }

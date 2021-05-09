@@ -13,16 +13,17 @@ export class NoteGestor {
    * @param user que guarda el usuario
    * @param note que guarda la nota a ser guardada en formato json
    */
-  addNote(user: string, note: Note) {
+  addNote(user: string, note: Note): string {
     let path: string = 'data_base/' + user;
+    let result: string = '';
     if (fs.existsSync(path)) {
       if (fs.existsSync(path + "/" + note.getTitle() + '.json'))
-        console.log(chalk.red("ERROR: El fichero ya existe"));
+        result = chalk.red("ERROR: El fichero ya existe");
       else {
         let data = {"title": note.getTitle(), "body": note.getBody(), "color": note.getColor()};
         let myData = JSON.stringify(data);
         fs.writeFileSync(path + "/" + note.getTitle() + '.json', myData)
-        console.log(chalk.green("El fichero se ha creado"));
+        result = chalk.green("El fichero se ha creado");
       }
     }
     else {
@@ -30,8 +31,9 @@ export class NoteGestor {
       let data = {"title": note.getTitle(), "body": note.getBody(), "color": note.getColor()};
       let myData = JSON.stringify(data);
       fs.writeFileSync(path + "/" + note.getTitle() + '.json', myData)
-      console.log(chalk.green("El fichero se ha creado"));
+      result = chalk.green("El fichero se ha creado");
     }
+    return result;
   }
   
   /**
