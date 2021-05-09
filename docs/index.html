@@ -58,8 +58,8 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#informe-de-la-práctica-8-de-la-asignatura-de-desarrollo-de-sistemas-infórmaticas" id="informe-de-la-práctica-8-de-la-asignatura-de-desarrollo-de-sistemas-infórmaticas" style="color: inherit; text-decoration: none;">
-					<h1>Informe de la Práctica 8 de la asignatura de Desarrollo de Sistemas Infórmaticas</h1>
+				<a href="#informe-de-la-práctica-10-de-la-asignatura-de-desarrollo-de-sistemas-infórmaticos" id="informe-de-la-práctica-10-de-la-asignatura-de-desarrollo-de-sistemas-infórmaticos" style="color: inherit; text-decoration: none;">
+					<h1>Informe de la Práctica 10 de la asignatura de Desarrollo de Sistemas Infórmaticos</h1>
 				</a>
 				<a href="#datos" id="datos" style="color: inherit; text-decoration: none;">
 					<h2>Datos</h2>
@@ -70,85 +70,48 @@
 					<li><strong>Gmail:</strong> alu0101123677@ull.edu.es</li>
 					<li><strong>Univeridad:</strong> Universidad de La Laguna</li>
 					<li><strong>Asignatura:</strong> Desarrollo de Sistemas Informáticos</li>
-					<li><strong>Práctica:</strong> Práctica 8 Aplicación de procesamiento de notas de texto</li>
+					<li><strong>Práctica:</strong> Práctica 10 Cliente y servidor para una aplicación de procesamiento de notas de texto</li>
 				</ul>
-				<p><a href="https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct08-filesystem-notes-app-alu0101123677/actions/workflows/tests.yml"><img src="https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct08-filesystem-notes-app-alu0101123677/actions/workflows/tests.yml/badge.svg" alt="Tests"></a></p>
-				<p><a href="https://coveralls.io/github/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct08-filesystem-notes-app-alu0101123677?branch=main"><img src="https://coveralls.io/repos/github/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct08-filesystem-notes-app-alu0101123677/badge.svg?branch=main" alt="Coverage Status"></a></p>
-				<p><a href="https://sonarcloud.io/dashboard?id=ULL-ESIT-INF-DSI-2021_ull-esit-inf-dsi-20-21-prct08-filesystem-notes-app-alu0101123677"><img src="https://sonarcloud.io/api/project_badges/measure?project=ULL-ESIT-INF-DSI-2021_ull-esit-inf-dsi-20-21-prct08-filesystem-notes-app-alu0101123677&metric=alert_status" alt="Quality Gate Status"></a></p>
+				<p><a href="https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct10-async-sockets-alu0101123677/actions/workflows/tests.yml"><img src="https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct10-async-sockets-alu0101123677/actions/workflows/tests.yml/badge.svg" alt="Tests"></a> <a href="https://sonarcloud.io/dashboard?id=ULL-ESIT-INF-DSI-2021_ull-esit-inf-dsi-20-21-prct10-async-sockets-alu0101123677"><img src="https://sonarcloud.io/api/project_badges/measure?project=ULL-ESIT-INF-DSI-2021_ull-esit-inf-dsi-20-21-prct10-async-sockets-alu0101123677&metric=alert_status" alt="Quality Gate Status"></a> </p>
 				<a href="#desarrollo" id="desarrollo" style="color: inherit; text-decoration: none;">
 					<h2>Desarrollo</h2>
 				</a>
 				<a href="#1-introducción" id="1-introducción" style="color: inherit; text-decoration: none;">
 					<h3>1. Introducción</h3>
 				</a>
-				<p>Informe de la octava práctica de la asignatura de <strong>Desarrollo de Sistemas Informáticos</strong>. En la práctica propuesta se ha realizado un ejercicio en typescript en el cuál tendremos que implementar una aplicación de procesamiento de notas de texto. Permitirá <strong>añadir</strong>, <strong>modificar</strong>, <strong>eliminar</strong>, <strong>listar</strong> y <strong>leer</strong> notas de un usuario en concreto. Las notas se almacenarán como ficheros <strong>JSON</strong> en el sistema de ficheros de la máquina que ejecute la aplicación.</p>
-				<p>Una nota estará formada, como mínimo, por un <strong>título</strong>, un <strong>cuerpo</strong> y un <strong>color</strong> (rojo, verde, azul o amarillo).</p>
-				<p><strong>Importante:</strong>  Utilizar el comando <code>npm install</code> para instalar las dependencias de desarrollo que utiliza el proyecto cuando se descargue de GitHub. Asimismo los test unitarios si se ejecutan con <code>npm run test</code> o <code>npm run coverage</code> se ejecutan y pasan completamente pero hay ocasiones que con la integración de github action cuando se ejecutan al realizar el push es posible que alguna de las versiones de node de fallo mientras que otra versión las ejecute correctamente. </p>
+				<p>Informe de la decima práctica de la asignatura de <strong>Desarrollo de Sistemas Informáticos</strong>. En la práctica propuesta se ha realizado un ejercicio en <strong>typescript</strong> en los cuales trabajaremos con el sistemas de ficheros de la práctica 8 para escribir un <strong>servidor</strong> y un <strong>cliente</strong> haciendo uso de los <strong>sockets</strong> proporcionados por el módulo net de <strong>Node.js</strong>.</p>
+				<p><strong>Importante:</strong> Utilizar el comando <code>npm install</code> para instalar las dependencias de desarrollo que utiliza el proyecto cuando se descargue de GitHub.</p>
 				<a href="#2-objetivos" id="2-objetivos" style="color: inherit; text-decoration: none;">
 					<h3>2. Objetivos</h3>
 				</a>
-				<p>El objetivo principal de la práctica es el aprendizaje y utilización de los paquetes <strong>yargs</strong> y <strong>chalk</strong>, así como familiarisarse con el API síncrona que proporciona Node.js. Para cumplir este objetivo se llevará a cabo el ejercicio comentado en el apartado de introducción de este informe.</p>
+				<p>El objetivo principal de la práctica es familiarizarse con el <strong>módulo net</strong> de Node.js y la clase <strong>EventEmitter</strong> del módulo <strong>Events</strong> de Node.js para esto realizaremos el ejercicio mencionado con anterioridad en el apartado de introducción y explicado en el apartado de desarrollo. </p>
 				<a href="#3-desarrollo" id="3-desarrollo" style="color: inherit; text-decoration: none;">
 					<h3>3. Desarrollo</h3>
 				</a>
 				<a href="#31-tareas-previas" id="31-tareas-previas" style="color: inherit; text-decoration: none;">
 					<h4>3.1 Tareas previas</h4>
 				</a>
-				<p>Para el desarrollo de la práctica cómo tal primero hay que hacer unas preparaciones previas, hay que aceptar la asignación de la práctica 8 y preparar el entorno del proyecto, para esto es necesario package.json y tsconfig.json, así cómo crear la estructura de directorios. Además de seguir las pautas para implementar la generación de documentación por <strong>typedoc</strong>, los test unitarios realizandos con <strong>mocha</strong> y <strong>chai</strong>, el cubrimiento de código mediante <strong>instabul</strong> y <strong>coveralls</strong> y por último la implementación de <strong>GitHub Actions</strong> que llevará a cabo los test unitarios, el cubrimiento del código y la utilización del <strong>Sonar Cloud</strong> para comprobar la calidad y seguridad del código fuente.</p>
-				<p>Por otro lado la lectura y aprendizaje de los paquetes <strong>Yargs</strong> y <strong>Chalk</strong> así cómo de la <strong>API síncrona</strong>.</p>
+				<p>Para el desarrollo de la práctica cómo tal primero hay que hacer unas preparaciones previas, hay que aceptar la asignación de la práctica 10 y preparar el entorno del proyecto, para esto es necesario el archivo <strong>package.json</strong> y <strong>tsconfig.json</strong>, así cómo crear la estructura de directorios. Además de seguir las pautas para implementar la generación de documentación por <strong>typedoc</strong>, los test unitarios realizandos con <strong>mocha</strong> y <strong>chai</strong>, el cubrimiento de código mediante <strong>instabul</strong> y <strong>coveralls</strong> y por último la implementación de <strong>GitHub Actions</strong> que llevará a cabo los test unitarios, el cubrimiento del código y la utilización del <strong>Sonar Cloud</strong> para comprobar la calidad y seguridad del código fuente.</p>
+				<p>Por otro lado leer y familiarizarse familiarizarse con el <strong>módulo net</strong> de Node.js y la clase <strong>EventEmitter</strong> del módulo <strong>Events</strong> de Node.js para esto realizaremos el ejercicio mencionado con anterioridad en el apartado de introducción y explicado en el apartado de desarrollo. </p>
 				<a href="#32-desarrollo" id="32-desarrollo" style="color: inherit; text-decoration: none;">
 					<h4>3.2 Desarrollo</h4>
 				</a>
-				<p>En este ejercicio creamos la clase <strong>Note</strong> y <strong>NoteGestor</strong> y el main de nuestro programa <strong>note-app</strong> implementado con <strong>yargs</strong> para utilizar la línea de comandos.</p>
-				<a href="#321-note-app" id="321-note-app" style="color: inherit; text-decoration: none;">
-					<h5>3.2.1 <a href="./src/note-app.ts">note-app</a></h5>
-				</a>
-				<p>Main del programa implementado con el paquete <strong>yargs</strong> para utilizar diversos comandos por terminal, los comandos utilizados son <strong>add</strong>, <strong>modify</strong>, <strong>list</strong>, <strong>read</strong> y <strong>remove</strong>.</p>
-				<p>Comando <strong>add</strong>, se construye pasando por línea de cómando el usuario, el titulo de la nota, el cuerpo de la nota y el color de la nota. En el handler creamos un objeto de la clase Note y otro de la clase NoteGestor para así llamar al método addNote y añadir una nota en formato json al directorio del usuario.</p>
-				<p>Comando <strong>modify</strong>, se construye pasando por línea de cómando el usuario, el título de la nota, el cuerpo de la nota y el color de la nota. En el handler creamos un objeto de la clase Note y otro de la clase NoteGestor para así llamar al método modifyNote de la clase NoteGestor y modificar una nota ya creada.</p>
-				<p>Comando <strong>list</strong>, se construye pasando por línea de cómando el usuario. En el handler creamos un objeto de la clase NoteGestor para llamar así al método listNote y mostrar todas las notas que tiene un usuario.</p>
-				<p>Comando <strong>read</strong>, se construye pasando por línea de cómando el usuario y el titulo de una nota. En el handler creamos un objeto de la clase NoteGestor para así llamar al método readNote y mostrar el contenido que tiene una nota.</p>
-				<p>Comando <strong>remove</strong>, se construye pasando por línea de cómando el usuario y el titulo de una nota. En el handler creamos un objeto de la clase NoteGestor para así llamar al método removeNote y eliminar la nota de un usuario.</p>
-				<p>Para introducir los colores deben ser: Rojo, Verde, Azul o Amarillo. Para ejecutar el programa se tienen las siguientes opciones:</p>
-				<ul>
-					<li><p>node dist/note-app.js add --user=&quot;nombre del usuario&quot; --title=&quot;titulo de la nota&quot; --body=&quot;cuerpo de la nota&quot; --color=&quot;Color&quot;</p>
-					</li>
-					<li><p>node dist/note-app.js modify --user=&quot;nombre del usuario&quot; --title=&quot;titulo de la nota&quot; --body=&quot;cuerpo de la nota&quot; --color=&quot;Color&quot;</p>
-					</li>
-					<li><p>node dist/note-app.js list --user=&quot;nombre del usuario&quot;</p>
-					</li>
-					<li><p>node dist/note-app.js read --user=&quot;nombre del usurio&quot; --title=&quot;titulo de la nota&quot;</p>
-					</li>
-					<li><p>node dist/note-app.js remove --user=&quot;nombre del usuario&quot; --title=&quot;titulo de la nota&quot;</p>
-					</li>
-				</ul>
-				<a href="#322-note" id="322-note" style="color: inherit; text-decoration: none;">
-					<h5><a href="./src/Note.ts">3.2.2 Note</a></h5>
-				</a>
-				<p>Clase <strong>Note</strong> que realiza la representación de un objeto nota, cuenta con tres atributos title, body y color que representan respectivamente el titulo, el cuerpo y el color que tendría una nota. Cuenta con 8 atributos, 3 son getters para los atributos de la clase y 3 son setters para los atributos también, además de un método printTitle y printBody, estos dos últimos métodos revisan de que color es el objeto nota e imprimen con el <strong>chalk</strong> su color correspondiente el titulo y el cuerpo respectivamente mediante un switch.</p>
-				<a href="#323-notegestore" id="323-notegestore" style="color: inherit; text-decoration: none;">
-					<h5><a href="./src/NoteGestor.ts">3.2.3 NoteGestore</a></h5>
-				</a>
-				<p>Clase <strong>NoteGestore</strong> que realiza las funcionalidades añadir una nota, eliminar una nota, modificar una nota, leer una nota y listar las notas que tiene un usuario. Para realizar estas funcionalidades se cuenta con los métodos addNote, modifyNote, listNote, readNote y removeNote.</p>
-				<p>AddNote recibe como parametros un string que representa el usuario y un objeto de la clase Note para así crear un fichero <strong>JSON</strong> que guarde la nota del usuario. Usando la función <strong>existSync</strong> de <strong>node.js</strong> comprobamos si el directorio del usuario existe, si no existe creamos el directorio y el archivo, si existiera revisamos si existe el archivo, en el caso de existir mostramos un mensaje de error y si no existe lo creamos. Para crear el archivo con el contenido de la nota utilizamos la funcion <strong>writeFileSync</strong> de <strong>node.js</strong>, es importante que el data que se le pase se consiga en un formato adecuado, esto lo realizamos gracias al <strong>JSON.stringify</strong>.</p>
-				<p>modifyNote recibe como parametros un string que representa el usuario y un objeto de la clase para así modificar un archivo <strong>JSON</strong> de un usuario. Usando la función <strong>existSync</strong> de <strong>node.js</strong> comprobamos si el directorio del usuario existe, si no existe mostramos un mensaje de error, si existiera revisamos si existe el archivo, en el caso de no existir mostramos un mensaje de error y si existe lo eliminamos y creamos un nuevo archivo a partir del objeto note recibido por parametro.</p>
-				<p>listNode recibe un parametro string que representa el usuario. Usando la función <strong>existSync</strong> de <strong>node.js</strong> comprobamos si el directorio del usuario existe, si no existe mostramos un mensaje de error, si existiera mostramos un listado de las notas que tiene el usuario. Para mostrar las notas utilizamos la función <strong>readFileSync</strong> de <strong>node.js</strong> para tener un vector con los nombres de todos los archivos JSON que hay en el directorio del usuario, realizamos un forEach para cada elemento del vector y así utilizar la función <strong>readFileSync</strong> para conseguir los datos de cada archivo y crear un objeto de la clase Note con los datos extraidos del fichero para utilizar el método <strong>printTitle</strong>.</p>
-				<p>readNote recibe dos parametros tipo string, para así conseguir el usuario y el titulo. Usando la función <strong>existSync</strong> de <strong>node.js</strong> comprobamos si el directorio del usuario existe, si no existe mostramos un mensaje de error, si existiera comprobamos si exite el archivo, si no existe mostramos un mensaje de error y en caso de existir utilizamos la estrategia del método listNode pero para solo un archivo y usando los métodos <strong>printTitle</strong> y <strong>printBody</strong>.</p>
-				<p>removeNote recibe dos parametros tipo string para así conseguir el usuario y el titulo. Usando la función <strong>existSync</strong> de <strong>node.js</strong> comprobamos si el directorio del usuario existe, si no existe mostramos un mensaje de error, si existiera comprobamos si exite el archivo, si no existe mostramos un mensaje de error y en caso de existir utilizamos la función <strong>rmSync</strong> de <strong>node.js</strong></p>
+				<p>Para esta práctica tendremos Las operaciones que podrá solicitar el cliente al servidor deberán ser las mismas que ya implementamos durante la Práctica 8, esto es, añadir, modificar, eliminar, listar y leer notas de un usuario concreto. Un usuario interactuará con el cliente de la aplicación, exclusivamente, a través de la línea de comandos. Al mismo tiempo, en el servidor, las notas se almacenarán como ficheros JSON en el sistema de ficheros y siguiendo la misma estructura de directorios utilizada durante la Práctica 8.</p>
 				<a href="#4-conclusiones" id="4-conclusiones" style="color: inherit; text-decoration: none;">
 					<h3>4. Conclusiones</h3>
 				</a>
-				<p>En conclusión la utilización del paquete <strong>yarg</strong> nos permite aprovechar la línea de comando y el paquete <strong>chalk</strong> aprovechar configuraciones distintas para mostrar de forma más cómoda información de distinta indole, esto en combinación con <strong>node.js</strong> nos permite crear programas mucho más dinámicos y que modelen aplicaciones que se usarían en el día a día.</p>
-				<p>Así mismo la implementación de <strong>Sonar Cloud</strong> nos permite comprobar la calidad de nuestro código de manera mucho más cómoda.</p>
 				<a href="#5-bibliografía" id="5-bibliografía" style="color: inherit; text-decoration: none;">
 					<h3>5. Bibliografía</h3>
 				</a>
-				<p><a href="https://ull-esit-inf-dsi-2021.github.io/prct08-filesystem-notes-app/">Guión de la práctica 8</a></p>
+				<p><a href="https://ull-esit-inf-dsi-2021.github.io/prct10-async-sockets/">Guión de la práctica 10</a></p>
 				<p><a href="https://ull-esit-inf-dsi-2021.github.io/nodejs-theory/nodejs-intro.html">Introducción a Node.js</a></p>
 				<p><a href="https://ull-esit-inf-dsi-2021.github.io/nodejs-theory/nodejs-filesystem.html">Introducción al sistema de ficheros en Node.js</a></p>
 				<p><a href="https://www.npmjs.com/package/yargs">Yarg</a></p>
 				<p><a href="https://www.npmjs.com/package/chalk">Chalk</a></p>
 				<p><a href="https://nodejs.org/dist/latest-v15.x/docs/api/fs.html#fs_synchronous_api">API síncrona</a> </p>
+				<p><a href="https://ull-esit-inf-dsi-2021.github.io/nodejs-theory/nodejs-sockets.html">Apuntes de sockets</a></p>
+				<p><a href="https://nodejs.org/dist/latest-v16.x/docs/api/net.html">Modulo net</a></p>
+				<p><a href="https://nodejs.org/dist/latest-v16.x/docs/api/events.html#events_class_eventemitter">Eventmitter</a></p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -158,13 +121,22 @@
 						<a href="modules.html">Exports</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/classeventemitter.html">Class<wbr>Event<wbr>Emitter</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/note.html">Note</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/notegestor.html">Note<wbr>Gestor</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/note_app.html">note-<wbr>app</a>
+						<a href="modules/client.html">client</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/server.html">server</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/types.html">types</a>
 					</li>
 				</ul>
 			</nav>
@@ -179,6 +151,9 @@
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
 			</ul>

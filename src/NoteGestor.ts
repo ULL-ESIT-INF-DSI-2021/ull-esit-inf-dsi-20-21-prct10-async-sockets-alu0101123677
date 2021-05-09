@@ -12,6 +12,7 @@ export class NoteGestor {
    * Función addNote que añade una nota en formato json al repositorio de un usuario
    * @param user que guarda el usuario
    * @param note que guarda la nota a ser guardada en formato json
+   * @return un tipo string 
    */
   addNote(user: string, note: Note): string {
     let path: string = 'data_base/' + user;
@@ -39,6 +40,7 @@ export class NoteGestor {
   /**
    * Función listNote que muestra por terminal los titulos de las notas de un usuario
    * @param user que guarda el usuario
+   * @return un tipo string 
    */
   listNote(user: string): string {
     let path: string = 'data_base/' + user;
@@ -61,6 +63,7 @@ export class NoteGestor {
    * Función modifyNote que modifica la nota de un usuario
    * @param user que guarda el usuario
    * @param note que guarda la nota para ser modificada
+   * @return un tipo string 
    */
   modifyNote(user: string, note: Note): string {
     let path: string = 'data_base/' + user;
@@ -85,6 +88,7 @@ export class NoteGestor {
    * Función readNote que lee el contenido de la nota de un usuario
    * @param user que guarda el usuario
    * @param title que guarda el titulo de la nota
+   * @return un tipo string 
    */
   readNote(user: string, title: string): string {
     let path: string = 'data_base/' + user;
@@ -109,6 +113,7 @@ export class NoteGestor {
    * Función removeNote que elimina una nota de un usuario
    * @param user que guarda al usuario
    * @param title que guarda el titulo de la nota
+   * @return un tipo string 
    */
   removeNote(user: string, title: string): string {
     let path: string = 'data_base/' + user;

@@ -61,6 +61,7 @@ export class Note {
   
   /**
    * Método printTitle que imprime el titulo según el color de la nota
+   * @return un tipo string con el color del titulo
    */
   printTitle(): string{
     let result = '';
@@ -87,6 +88,7 @@ export class Note {
   
   /**
    * Método printBody que imprime el cuerpo según el color de la nota
+   * @return un tipo string con el color del cuerpo.
    */
   printBody(): string{
     let result: string = ''

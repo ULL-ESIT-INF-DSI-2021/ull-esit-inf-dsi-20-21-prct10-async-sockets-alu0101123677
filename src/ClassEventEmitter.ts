@@ -1,5 +1,9 @@
 import {EventEmitter} from 'events';
 
+/**
+ * Clase que hereda de EventEmitter, utilizada tanto por el cliente como
+ * por el servidor para recibir los mensajes completos.
+ */
 export class ClassEventEmitter extends EventEmitter {
   constructor(connection: EventEmitter) {
     super();

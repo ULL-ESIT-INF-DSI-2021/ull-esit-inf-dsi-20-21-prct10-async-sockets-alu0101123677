@@ -5,6 +5,12 @@ import {ResponseType} from './types';
 import {NoteGestor} from './NoteGestor'
 import {Note} from './Note'
 
+/**
+ * Servidor encargado de utilizar la clase NoteGestor 
+ * Recibe un mensaje del cliente con la solicitud deseada y la procesa mediante un switch
+ * para llamar a la función correspondiente de la clase NoteGestor para luego enviarle la 
+ * respuesta al cliente.
+ */
 const server = net.createServer({allowHalfOpen: true}, (connection) => {
   console.log(chalk.green('Un cliente se ha conectado'));
 

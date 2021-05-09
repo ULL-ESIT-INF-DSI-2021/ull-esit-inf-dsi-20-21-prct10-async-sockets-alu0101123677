@@ -4,6 +4,11 @@ import * as net from 'net';
 import {ClassEventEmitter} from './ClassEventEmitter';
 import {RequestType} from './types';
 
+/**
+ * Cliente encargado con comunicarse con el servidor y trasmitirle
+ * una solicitud con las instrucciones recibidas mediante yargs. 
+ * Una vez recibida la respuesta del servidor lo mostraras por pantalla.
+ */
 const socket = net.connect({port: 60300});
 const client = new ClassEventEmitter(socket);
 
