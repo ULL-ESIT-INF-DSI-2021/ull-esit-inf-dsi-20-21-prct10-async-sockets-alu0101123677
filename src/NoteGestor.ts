@@ -60,21 +60,23 @@ export class NoteGestor {
    * @param user que guarda el usuario
    * @param note que guarda la nota para ser modificada
    */
-  modifyNote(user: string, note: Note) {
+  modifyNote(user: string, note: Note): string {
     let path: string = 'data_base/' + user;
+    let result: string = ""
     if (fs.existsSync(path)) {
       if (fs.existsSync(path + "/" + note.getTitle() + ".json")) {
         fs.rmSync(path + "/" + note.getTitle() + ".json");
         let data = {"title": note.getTitle(), "body": note.getBody(), "color": note.getColor()};
         let myData = JSON.stringify(data);
         fs.writeFileSync(path + "/" + note.getTitle() + '.json', myData)
-        console.log(chalk.green("El fichero se ha modificado"));
+        result = chalk.green("El fichero se ha modificado");
       }
       else
-        console.log(chalk.red("ERROR: El fichero no existe"));
+        result = chalk.red("ERROR: El fichero no existe");
     }
     else
-      console.log(chalk.red("ERROR: El directorio no existe"));
+      result = chalk.red("ERROR: El directorio no existe");
+    return result;
   }
   
   /**
@@ -104,17 +106,20 @@ export class NoteGestor {
    * @param user que guarda al usuario
    * @param title que guarda el titulo de la nota
    */
-  removeNote(user: string, title: string) {
+  removeNote(user: string, title: string): string {
     let path: string = 'data_base/' + user;
+    let result: string = ''
     if (fs.existsSync(path)) {
       if (fs.existsSync(path + "/" + title + ".json")) {
         fs.rmSync(path + "/" + title + ".json");
-        console.log(chalk.green("El fichero ha sido borrado"));
+        result = chalk.green("El fichero ha sido borrado");
       }
       else
-        console.log(chalk.red("ERROR: El fichero no existe"));
+        result = chalk.red("ERROR: El fichero no existe");
     }
     else
-      console.log(chalk.red("ERROR: El directorio no existe"));
+      result = chalk.red("ERROR: El directorio no existe");
+      
+    return result;
   }
 }

@@ -25,8 +25,11 @@ const server = net.createServer({allowHalfOpen: true}, (connection) => {
         response.message = note_gestor.addNote(message.user, note)
         break;
       case 'modify':
+        let note2 = new Note(message.title, message.body, message.color);
+        response.message = note_gestor.modifyNote(message.user, note2);
         break;
       case 'remove':
+        response.message = note_gestor.removeNote(message.user, message.title);
         break;
       case 'read':
         break;
