@@ -199,23 +199,7 @@ socket.write(JSON.stringify(request), (err) => {
 });
 
 client.on('message', (message) => {
-  switch (message.type) {
-    case 'add':
-      console.log(message.message);
-      break;
-    case 'modify':
-      console.log(message.message);
-      break;
-    case 'remove':
-      console.log(message.message);
-      break;
-    case 'read':
-      console.log(message.message);
-      break;
-    case 'list':
-      console.log(message.message);
-      break;
-  }
+  console.log(message.message);
 });
 
 client.on('error', (err) => {
